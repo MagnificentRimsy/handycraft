@@ -1,0 +1,18 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+Color appColor = Color(0xff00B251);
+Color blueColor = Color(0xff5034A3);
+Color darkBlueColor = Color(0xFF5034A3);
+Color greyColor03 = Colors.grey.withOpacity(0.3);
+Color greyColor = Colors.grey;
+Color textFieldBgColor = Color(0xffF9F9F9);
+Color drawerColor = Color(0xff27373D);
+Color drawerSelectMenuColor = Color(0xff3D5860);
+Color disableColor = Color(0xffdddddd);
+Color whiteColor = Color(0xffffffff);
+Color errorColor = Color(0xffff0000);
+Color backGroundColor = Color(0xffEDEDED);
+Color darkColor = Color.fromARGB(255, 47, 3, 113);
+Color AppBarStartColor =  Color(0xff134389);
+Color AppBarEndColor = Color(0xff4EAF48);
+Color ButtonColor = Color(0xff5034A3);
