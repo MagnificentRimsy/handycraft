@@ -27,7 +27,7 @@ class _PrivacyPolicyScreenScreenState extends State<PrivacyPolicyScreenScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -66,23 +66,12 @@ class _PrivacyPolicyScreenScreenState extends State<PrivacyPolicyScreenScreen> {
                 textAlign: TextAlign.left,
               ),
             ),
+
             Container(
               child: RichText(
                 text: TextSpan(
                     text:
-                        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea. ",
-                    style: style.PoppinsLight(
-                      color: Color(0xFF2C2F30),
-                      fontSize: size.convert(context, 12),
-                    )),
-              ),
-            ),
-            SpacebetweenTextField(),
-            Container(
-              child: RichText(
-                text: TextSpan(
-                    text:
-                        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                        " By Clicking Accept You are agreeing to the terms of use of this app ",
                     style: style.PoppinsLight(
                       color: Color(0xFF2C2F30),
                       fontSize: size.convert(context, 12),
@@ -92,9 +81,7 @@ class _PrivacyPolicyScreenScreenState extends State<PrivacyPolicyScreenScreen> {
             SpacebetweenTextField(
               spacing: 20,
             ),
-            SpacebetweenTextField(
-              spacing: 60,
-            ),
+
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

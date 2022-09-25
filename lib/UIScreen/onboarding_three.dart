@@ -28,7 +28,7 @@ class _OnboardingThreeScreenState extends State<OnboardingThreeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -40,7 +40,7 @@ class _OnboardingThreeScreenState extends State<OnboardingThreeScreen> {
               _scaffoldkey.currentState.openDrawer();
             },
             leadingIcon: Container(),
-            centerWigets: Image.asset("assets/images/icon.png"),
+
           ),
         ),
         body: _body());
@@ -95,7 +95,7 @@ class _OnboardingThreeScreenState extends State<OnboardingThreeScreen> {
                               child: OnboardingFourScreen(),
                               type: PageTransitionType.fade));
                     },
-                    txt: "Woman ",
+                    txt: "Female ",
                     fontWeight: FontWeight.bold,
                     fontsize: size.convert(context, 12),
                     color1: ButtonColor,
@@ -112,7 +112,7 @@ class _OnboardingThreeScreenState extends State<OnboardingThreeScreen> {
                               child: OnboardingFourScreen(),
                               type: PageTransitionType.fade));
                     },
-                    txt: "Man ",
+                    txt: "Male ",
                     fontWeight: FontWeight.bold,
                     fontsize: size.convert(context, 12),
                     color1: Colors.black,

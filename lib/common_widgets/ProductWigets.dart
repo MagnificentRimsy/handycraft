@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:handycraft/Models/BookingInfo.dart';
+import 'package:handycraft/models/BookingInfo.dart';
 import 'package:handycraft/common_widgets/SpacebetweenTextField.dart';
 import 'package:handycraft/common_widgets/filled_button.dart';
 import 'package:flutter/cupertino.dart';

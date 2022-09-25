@@ -42,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -65,7 +65,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             trailingIcon: circularCenterImage(
-              imageUrl: "assets/icons/ProfileImage.png",
+              imageUrl: "assets/icons/profile1.JPG",
               assetImage: true,
             ),
           ),
@@ -188,7 +188,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   'Google',
                   style: style.PoppinsSemiBold(
                       fontSize: size.convert(context, 12), color: Colors.black),
-                ), 
+                ),
                 trailing: toggleButton(
                   buttonWidth: size.convertWidth(context, 50),
                   value: toggle4,
@@ -200,6 +200,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
+
             Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black12),

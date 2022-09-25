@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:handycraft/UIScreen/HomeExplore.dart';
 import 'package:handycraft/UIScreen/onBoarding.dart';
 import 'package:handycraft/UIScreen/signInScreen.dart';
@@ -27,7 +28,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -112,11 +113,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   ),
                   filledButton(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                              child: SignInScreen(),
-                              type: PageTransitionType.fade));
+                      Get.toNamed('/login');
                     },
                     txt: "Cancel ",
                     fontsize: size.convert(context, 12),

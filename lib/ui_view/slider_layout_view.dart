@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:handycraft/Models/slider.dart';
+import 'package:handycraft/models/slider.dart';
 import 'package:handycraft/UIScreen/signInScreen.dart';
 import 'package:handycraft/UIScreen/signUpScreen.dart';
 import 'package:handycraft/contacts/constants.dart';

@@ -10,6 +10,8 @@ class CustomTextField extends StatefulWidget {
   Widget iconWidget;
   Function onchange;
   Function onSubmit;
+  Function validator;
+  Function onSaved;
   String hints;
   Widget trailingIcon ;
   double borderwidth;
@@ -20,7 +22,7 @@ class CustomTextField extends StatefulWidget {
   TextEditingController textEditingController;
   bool obscureText;
   bool isEnable;
-  CustomTextField({this.isEnable=true,this.obscureText,this.textInputType,this.borderwidth,this.trailingIcon,this.hints,this.color1, this.iconWidget,this.textEditingController,this.onchange,this.onSubmit,this.hintColor,this.borderRadius,this.w,this.h});
+  CustomTextField({this.isEnable=true,this.obscureText,this.textInputType,this.borderwidth,this.trailingIcon, this.validator, this.onSaved, this.hints,this.color1, this.iconWidget,this.textEditingController,this.onchange,this.onSubmit,this.hintColor,this.borderRadius,this.w,this.h});
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
@@ -70,6 +72,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 obscureText: widget.obscureText ?? false,
                 keyboardType: widget.textInputType == null  ? TextInputType.text: widget.textInputType,
                 controller: widget.textEditingController,
+                validator: widget.validator,
+                onSaved: widget.onSaved,
                 decoration: InputDecoration(
                     // labelText: widget.hints == null ? "" : widget.hints,
                     disabledBorder: InputBorder.none,

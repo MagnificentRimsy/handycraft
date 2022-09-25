@@ -2,6 +2,7 @@ import 'package:handycraft/styles/styles.dart';
 import 'package:flutter/material.dart';
 class MenuTextStyle extends StatelessWidget {
   String text;
+  
   MenuTextStyle({this.text});
   @override
   Widget build(BuildContext context) {

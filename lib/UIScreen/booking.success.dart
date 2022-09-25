@@ -29,7 +29,7 @@ class _BookingSuccessScreenState extends State<BookingSuccessScreen> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(key: _scaffoldkey, body: _body());
+    return Scaffold( body: _body());
   }
 
   _body() {

@@ -12,7 +12,7 @@ import 'package:handycraft/styles/size.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'DashBoard.dart';
+import 'drawer.dart';
 
 class Bookings extends StatefulWidget {
   @override

@@ -1,9 +1,11 @@
+import 'package:get/get.dart';
 import 'package:handycraft/UIScreen/introScreen.dart';
 import 'package:handycraft/UIScreen/onBoarding.dart';
 import 'package:handycraft/UIScreen/tryboarding.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:handycraft/UIScreen/signUpScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(SplashScreen());
 
@@ -18,9 +20,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => IntroScreen()));
+    Future.delayed(Duration(seconds: 3), () async{
+    final prefs = await SharedPreferences.getInstance();
+    final String userdata = prefs.getString('username');
+      userdata != null ?  Get.offNamed('/login', preventDuplicates: true) :  Get.offNamed('/intro', preventDuplicates: true);
     });
   }
 

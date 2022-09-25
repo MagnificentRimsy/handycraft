@@ -671,18 +671,7 @@ class _ViewServiceState extends State<ViewService> {
                 trailing: Container(
                   margin: EdgeInsets.all(10),
                   height: 50.0,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        side: BorderSide(color: blueColor)),
-                    onPressed: () {
-                            addBooking();
-                    },
-                    padding: EdgeInsets.all(10.0),
-                    color: Colors.white,
-                    textColor: blueColor,
-                    child: Text("Book", style: TextStyle(fontSize: 15)),
-                  ),
+                  child: Text("Book", style: TextStyle(fontSize: 15)),
                 ),
               );
               // Container(

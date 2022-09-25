@@ -2,6 +2,7 @@
 import 'package:handycraft/UIScreen/Bookings.dart';
 import 'package:handycraft/UIScreen/Favourite.dart';
 import 'package:handycraft/UIScreen/HomeExplore.dart';
+import 'package:handycraft/UIScreen/profileScreen.dart';
 import 'package:handycraft/UIScreen/searchService.dart';
 import 'package:handycraft/common_widgets/SpacebetweenTextField.dart';
 import 'package:handycraft/styles/color.dart';
@@ -77,56 +78,54 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
               ),
             ),
           ),
-          Container(
-            child: InkWell(
-              onTap: () {
-                // setState(() {
-                //   widget.select = 2;
+          // Container(
+          //   child: InkWell(
+          //     onTap: () {
+          //       // setState(() {
+          //       //   widget.select = 2;
                 
-                // });
-                if(widget.select!=2){
-                  Navigator.pushReplacement(context,
-                      PageTransition(
-                          type: PageTransitionType.fade, child: Favourite()));
-                }
-              },
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(Icons.bookmark,color: widget.select == 2? blueColor : greyColor,),
-                    space,
-                    Text(
-                      "Favorites",
-                      style: widget.select == 2 ? selectTextstyle : unselectTextstyle,
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
+          //       // });
+          //       if(widget.select!=2){
+          //         // Navigator.pushReplacement(context,
+          //         //     PageTransition(
+          //         //         type: PageTransitionType.fade, child: Favourite()));
+          //       }
+          //     },
+          //     child: Container(
+          //       child: Column(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         children: <Widget>[
+          //           Icon(Icons.bookmark,color: widget.select == 2? blueColor : greyColor,),
+          //           space,
+          //           Text(
+          //             "Favorites",
+          //             style: widget.select == 2 ? selectTextstyle : unselectTextstyle,
+          //           )
+          //         ],
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          
           Container(
             child: InkWell(
               onTap: () {
-                // setState(() {
-                //   widget.select = 3;
-                //   print("index print  ${widget.select}");
-                // });
-                if(widget.select != 3 ){
+         
+                if(widget.select != 2 ){
                   Navigator.pushReplacement(context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: Bookings()));
+                          type: PageTransitionType.fade, child: ProfileScreen()));
                 }
               },
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Icon(Icons.calendar_today_rounded,color: widget.select == 3? blueColor : greyColor ,),
+                    Icon(Icons.person,color: widget.select == 2? blueColor : greyColor ,),
                     space,
                     Text(
-                      "Booking",
-                      style: widget.select == 3 ? selectTextstyle : unselectTextstyle,
+                      "Profile",
+                      style: widget.select == 2 ? selectTextstyle : unselectTextstyle,
                     )
                   ],
                 ),

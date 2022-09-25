@@ -30,7 +30,7 @@ class _OnboardingTwoScreenState extends State<OnboardingTwoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -42,7 +42,7 @@ class _OnboardingTwoScreenState extends State<OnboardingTwoScreen> {
               _scaffoldkey.currentState.openDrawer();
             },
             leadingIcon: Container(),
-            centerWigets: Image.asset("assets/images/icon.png"),
+
           ),
         ),
         body: _body());
@@ -88,7 +88,7 @@ class _OnboardingTwoScreenState extends State<OnboardingTwoScreen> {
               child: RichText(
                 text: TextSpan(
                     text:
-                        "By allowing geolocation you are able to explore extra ado services in your location.",
+                        "By allowing geolocation you are giving handycraft permission to use your location.",
                     style: style.PoppinsLight(
                       color: Color(0xFF2C2F30),
                       fontSize: size.convert(context, 12),

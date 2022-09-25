@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:handycraft/common_widgets/filled_button.dart';
 import 'package:handycraft/styles/color.dart';
 import 'package:flutter/cupertino.dart';
@@ -153,10 +154,7 @@ class _IntroScreenState extends State<IntroScreen> {
                                 selectedIndex = selectedIndex + 1;
                               } else if (selectedIndex == 3) {
                                 print("Navigate to next Screen");
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SignUpScreen()));
+                                Get.toNamed('/register');
                               }
                             });
                           },

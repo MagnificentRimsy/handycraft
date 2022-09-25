@@ -1,4 +1,4 @@
-import 'package:handycraft/Models/slider.dart';
+import 'package:handycraft/models/slider.dart';
 import 'package:handycraft/contacts/constants.dart';
 import 'package:handycraft/styles/color.dart';
 import 'package:flutter/cupertino.dart';

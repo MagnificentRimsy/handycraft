@@ -1,3 +1,8 @@
+// ignore: unused_import
+// ignore_for_file: unused_import, unnecessary_import
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:handycraft/UIScreen/AddPayment.dart';
 import 'package:handycraft/UIScreen/Dashboard%20Screens/Payments.dart';
 import 'package:handycraft/UIScreen/Dashboard%20Screens/Reviews.dart';
@@ -5,6 +10,7 @@ import 'package:handycraft/UIScreen/Notifications.dart';
 import 'package:handycraft/UIScreen/Settings.dart';
 import 'package:handycraft/UIScreen/privacy.dart';
 import 'package:handycraft/UIScreen/profileScreen.dart';
+import 'package:handycraft/UIScreen/signInScreen.dart';
 import 'package:handycraft/common_widgets/BoxIcon.dart';
 import 'package:handycraft/common_widgets/MenuTextStyle.dart';
 import 'package:handycraft/common_widgets/backIcon.dart';
@@ -25,7 +31,7 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -35,7 +41,7 @@ class _DashBoardState extends State<DashBoard> {
             parentContext: context,
             leadingIcon: backIcon(),
             trailingIcon: circularCenterImage(
-              imageUrl: "assets/icons/ProfileImage.png",
+              imageUrl: "assets/images/user.png",
               assetImage: true,
               // w: size.convertWidth(context, 12),
               // h: size.convertWidth(context, 12),
@@ -43,16 +49,19 @@ class _DashBoardState extends State<DashBoard> {
           ),
         ),
         body: _body(),
-      bottomNavigationBar: Container(
-        height: size.convert(context, 50),
-        decoration: BoxDecoration(
-          color: textFieldBgColor,
-        ),
-        child: Center(
-          child: Text("Sign out",style: style.PoppinsRegular(
-              fontSize: size.convert(context, 15),
-            color: Colors.black
+      bottomNavigationBar: InkWell(
+        onTap: () =>   Get.toNamed('/login'),
+        child: Container(
+          height: size.convert(context, 50),
+          decoration: BoxDecoration(
+            color: textFieldBgColor,
           ),
+          child: Center(
+            child: Text("Sign out",style: style.PoppinsRegular(
+                fontSize: size.convert(context, 15),
+              color: Colors.black
+            ),
+            ),
           ),
         ),
       ),
@@ -78,9 +87,9 @@ class _DashBoardState extends State<DashBoard> {
                   Container(
                     child: RichText(
                       text: TextSpan(
-                        text: "Lady Summaya",
+                        text: "HANAN AISHA",
                         style: style.PoppinsSemiBold(
-                          fontSize: size.convert(context, 22)
+                          fontSize: size.convert(context, 25)
                         )
                       ),
                     ),
@@ -88,7 +97,7 @@ class _DashBoardState extends State<DashBoard> {
                   Container(
                     child: RichText(
                       text: TextSpan(
-                          text: "Joined 3rd of Jan 2019",
+                      //    text: "Joined 3rd of Jan 2019",
                           style: style.PoppinsRegular(
                               fontSize: size.convert(context, 10),
                             color: Colors.black
@@ -114,14 +123,14 @@ class _DashBoardState extends State<DashBoard> {
         children: [
           InkWell(
             onTap: (){
-                            Navigator.push(context, PageTransition(child: ProfileScreen(), type: PageTransitionType.fade));
+               Navigator.push(context, PageTransition(child: ProfileScreen(), type: PageTransitionType.fade));
 
             },
             child: Container(
               child: Row(
                 children: [
                   BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/Profile.png"),
+                    CustomIcon: Icon(Icons.person),
                     bgColor: textFieldBgColor,
                   ),
                   space,
@@ -140,66 +149,27 @@ class _DashBoardState extends State<DashBoard> {
               child: Row(
                 children: [
                   BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/Review.png"),
+                    CustomIcon: Icon(Icons.warning),
                     bgColor: textFieldBgColor,
                   ),
                   space,
-                  Expanded(child: MenuTextStyle(text: "Review",)),
+                  Expanded(child: MenuTextStyle(text: "Complaint",)),
                 ],
               ),
             ),
           ),
           spaceHeight,
 
-          InkWell(
-            onTap: (){
-              Navigator.push(context, PageTransition(child: Payments(), type: PageTransitionType.fade));
-            },
-            child: Container(
-              child: Row(
-                children: [
-                  BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/Payment.png"),
-                    bgColor: textFieldBgColor,
-                  ),
-                  space,
-                  Expanded(child: MenuTextStyle(text: "Payments",)),
-                ],
-              ),
-            ),
-          ),
-          spaceHeight,
-
-          InkWell(
-            onTap: (){
-                            Navigator.push(context, PageTransition(child: NotificationsScreen(), type: PageTransitionType.fade));
-
-            },
-            child: Container(
-              child: Row(
-                children: [
-                  BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/notification.png"),
-                    bgColor: textFieldBgColor,
-                  ),
-                  space,
-                  Expanded(child: MenuTextStyle(text: "Notifications",)),
-                ],
-              ),
-            ),
-          ),
-          spaceHeight,
 
           InkWell(
             onTap: (){
                             Navigator.push(context, PageTransition(child: SettingsScreen(), type: PageTransitionType.fade));
-
             },
             child: Container(
               child: Row(
                 children: [
                   BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/Settings.png"),
+                    CustomIcon: Icon(Icons.settings),
                     bgColor: textFieldBgColor,
                   ),
                   space,
@@ -219,7 +189,7 @@ class _DashBoardState extends State<DashBoard> {
               child: Row(
                 children: [
                   BoxIcon(
-                    CustomIcon: Image.asset("assets/icons/Privacy.png"),
+                    CustomIcon: Icon(Icons.privacy_tip),
                     bgColor: textFieldBgColor,
                   ),
                   space,
@@ -228,7 +198,30 @@ class _DashBoardState extends State<DashBoard> {
               ),
             ),
           ),
-          spaceHeight,
+
+            SizedBox(
+              height: 70.h,
+            ),
+          
+            OutlinedButton(
+              child: Text(
+                'Register as Worker',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.only(
+                    left: 90.w, right: 90.w, top: 15.h, bottom: 15.h),
+                primary: ButtonColor,
+                backgroundColor: Colors.white,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
+              ),
+              onPressed: () {
+                print('Pressed');
+               
+
+              },
+            ),
         ],
       ),
     );

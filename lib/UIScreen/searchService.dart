@@ -1,5 +1,5 @@
 
-import 'package:handycraft/Models/BookingInfo.dart';
+import 'package:handycraft/models/BookingInfo.dart';
 import 'package:handycraft/common_widgets/BoxIcon.dart';
 import 'package:handycraft/common_widgets/CustomBottomAppBar.dart';
 import 'package:handycraft/common_widgets/ProductWigets.dart';

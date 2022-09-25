@@ -20,7 +20,7 @@ class _OnboardingFourScreenState extends State<OnboardingFourScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
+        
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.convert(context, 80)),
           child: CustomAppBar(
@@ -32,7 +32,7 @@ class _OnboardingFourScreenState extends State<OnboardingFourScreen> {
               _scaffoldkey.currentState.openDrawer();
             },
             leadingIcon: Container(),
-            centerWigets: Image.asset("assets/images/icon.png"),
+
           ),
         ),
         body: _body());

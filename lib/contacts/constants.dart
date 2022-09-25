@@ -1,4 +1,7 @@
 class Constants{
+  static const String BASEURL = "https://handycraft-moble-api.abskaftan.com/api/"; //https://app.pyramidpharmacy.com/api/
+  static const String IMAGEBASEURL = "https://handycraft-moble-api.abskaftan.com/storage/";
+  
   static const String POPPINS = "Poppins";
   static const String OPEN_SANS = "OpenSans";
   static const String SKIP = "Skip";

@@ -19,6 +19,8 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../common_widgets/CustomBottomAppBar.dart';
+
 class ProfileScreen extends StatefulWidget {
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -31,31 +33,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldkey,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(size.convert(context, 80)),
-          child: CustomAppBar(
-            color1: Colors.transparent,
-            color2: Colors.transparent,
-            hight: size.convert(context, 80),
-            parentContext: context,
-            clickOnDrawer: () {
-              _scaffoldkey.currentState.openDrawer();
-            },
-            leadingIcon: backIcon(),
-            centerWigets: Container(
-              child: Text(
+        
+        appBar:AppBar(
+           backgroundColor: Colors.transparent, elevation: 0, centerTitle: true, title: Text(
                 "Profile",
                 style: style.PoppinsSemiBold(
                   color: Colors.black,
                   fontSize: size.convert(context, 22),
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ),
-        body: _body());
+                ),),
+    
+         ),
+       
+        body: _body(),
+        bottomNavigationBar: CustomBottomBar(
+        select: 2,
+      ),
+        
+        );
   }
 
   _body() {
@@ -74,7 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   margin: EdgeInsets.only(left: 50),
                   child: Image.asset(
-                    "assets/images/profile.png",
+                    "assets/images/user.png",
                     width: 120,
                     height: 120,
                   ),
@@ -141,7 +135,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Service Preference",
+                "Gender",
                 style:
                     style.PoppinsSemiBold(fontSize: size.convert(context, 14)),
               ),
@@ -154,8 +148,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Wrap(
                 spacing: 10,
                 children: [
-                  {"index": 1, "text": "Male"},
-                  {"index": 2, "text": "Female"},
+                  {"index": 1, "text": "Female"},
+                  {"index": 2, "text": "Male"},
                  
                 ]
                     .map((item) => Container(
@@ -168,7 +162,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           w: size.convertWidth(context, 110),
                           txt: item["text"].toString(),
                           color1: selectedGender == item["index"]
-                              ? Color(0xff434343)
+                              ? Color(0xff5034a3)
                               : Colors.white,
                           borderColor: greyColor,
                           txtcolor: selectedGender == item["index"]
