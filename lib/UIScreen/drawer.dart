@@ -87,7 +87,7 @@ class _DashBoardState extends State<DashBoard> {
                   Container(
                     child: RichText(
                       text: TextSpan(
-                        text: "HANAN AISHA",
+                        text: "SUMMAYAH ABDUL",
                         style: style.PoppinsSemiBold(
                           fontSize: size.convert(context, 25)
                         )
@@ -97,7 +97,7 @@ class _DashBoardState extends State<DashBoard> {
                   Container(
                     child: RichText(
                       text: TextSpan(
-                      //    text: "Joined 3rd of Jan 2019",
+                         text: "Joined 23rd of Sep 2022",
                           style: style.PoppinsRegular(
                               fontSize: size.convert(context, 10),
                             color: Colors.black
@@ -217,7 +217,7 @@ class _DashBoardState extends State<DashBoard> {
                     borderRadius: BorderRadius.all(Radius.circular(5))),
               ),
               onPressed: () {
-                print('Pressed');
+                Navigator.pushNamed(context, '/workerRegister');
                
 
               },

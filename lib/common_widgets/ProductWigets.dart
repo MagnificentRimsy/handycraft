@@ -11,13 +11,15 @@ import 'package:handycraft/styles/styles.dart';
 class ProductWigets extends StatelessWidget {
   Widget Address;
   String imageUrl;
+  String name;
+  String status;
   File file;
   bool fileImage;
   bool assetImage;
   Color color;
   double imageHeight;
   List<BookingInfo> bookingList;
-  ProductWigets({this.color,this.imageUrl,this.file,this.fileImage,this.assetImage,this.imageHeight,this.bookingList,this.Address});
+  ProductWigets({this.color,this.imageUrl, this.name, this.status, this.file,this.fileImage,this.assetImage,this.imageHeight,this.bookingList,this.Address});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,8 +45,7 @@ class ProductWigets extends StatelessWidget {
                           ? null
                           : DecorationImage(
                           image: fileImage??false
-                              ? FileImage(file)
-                              : assetImage
+                              //some contents here initially
                               ? AssetImage(imageUrl)
                               : NetworkImage(imageUrl),
                           fit: BoxFit.cover
@@ -69,7 +70,7 @@ class ProductWigets extends StatelessWidget {
                         ),
                         child: RichText(
                           text: TextSpan(
-                            text: "Open (Close at 10:00 pm)",
+                            text: status,
                             style: style.PoppinsRegular(
                               color: Colors.black,
                               fontSize: size.convert(context, 10)
@@ -94,7 +95,7 @@ class ProductWigets extends StatelessWidget {
                 Container(
                   child: RichText(
                     text: TextSpan(
-                      text: "Fantisia Place",
+                      text: name?? "Fantisia Place",
                       style: style.PoppinsSemiBold(
                         fontSize: size.convert(context, 16),
                         color: Colors.black

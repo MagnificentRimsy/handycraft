@@ -16,6 +16,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 import '../common_widgets/backIcon.dart';
+import '../contacts/constants.dart';
 
 class ServiceProviders extends StatefulWidget {
   @override
@@ -23,7 +24,6 @@ class ServiceProviders extends StatefulWidget {
 }
 
 class _ServiceProvidersState extends State<ServiceProviders> {
-  List item = ["All", "Hair Saloon", "Barbar", "Nail Saloon", "Show up"];
   List images = ["i1", "i3", "i2", "i4"];
   int selectedIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
@@ -32,21 +32,19 @@ class _ServiceProvidersState extends State<ServiceProviders> {
   final List<String> _categories = ["All", "One", "Two", "Three", "Four"];
   ServiceCategoryProvider data = Get.arguments;
 
+  
+  
+  List item =  ["All", "Hair Saloon", "Barbar", "Nail Saloon", "Show up"];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('Collected Data ${data.image}');
-
-     final items = data.providers;
-   
-  // this `result` contains all the item.        
-  
-  for (final r in items) {
-    print(r.toString());
-  }
-
+  //  print('Collected Data ${data.providers.map((e) => e.name)}');
+    // print('hellooooo ${data.providers.map((item) => new Text(item.image)).toList()}');
+    (data.providers).forEach((element) {
+        print('PROVIDER NAMES: ${element.name}');
+    });
   }
 
   @override
@@ -70,6 +68,8 @@ class _ServiceProvidersState extends State<ServiceProviders> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+
+
             Container(
                 margin: EdgeInsets.symmetric(
                     vertical: size.convert(context, 20),
@@ -118,18 +118,26 @@ class _ServiceProvidersState extends State<ServiceProviders> {
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   itemBuilder: (context, index) {
+                    var path = data.providers[index].image;
+                    var imageurl = path.replaceAll('\\', '/').toString();
+                    print('image url ${imageurl}');
+
                     // ViewService
                     return InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                child: ViewService(),
-                                type: PageTransitionType.fade));
+                       Get.toNamed('/servicedetails', arguments: data.providers[index]);
+
+                        // Navigator.push(
+                        //     context,
+                        //     PageTransition(
+                        //         child: ViewService(),
+                        //         type: PageTransitionType.fade));
                       },
                       child: ProductWigets(
-                        imageUrl: "assets/images/mask.png",
+                        imageUrl: Constants.IMAGEBASEURL+imageurl,
                         assetImage: true,
+                        status:data.providers[index].status ,
+                        name: data.providers[index].name,
                         Address: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -149,7 +157,7 @@ class _ServiceProvidersState extends State<ServiceProviders> {
                                   child: RichText(
                                     text: TextSpan(children: [
                                       TextSpan(
-                                          text: "Yaba left, Lagos Street",
+                                          text: "${data.providers[index].address}",
                                           style: style.PoppinsRegular(
                                               fontSize:
                                                   size.convert(context, 12),
@@ -169,7 +177,7 @@ class _ServiceProvidersState extends State<ServiceProviders> {
                       height: size.convertWidth(context, 10),
                     );
                   },
-                  itemCount: item.length ?? 0),
+                  itemCount: data.providers.length ?? 0),
               // child: Wrap(
               //   children: ["",""].map((item) => Container(
               //
@@ -192,6 +200,9 @@ class _ServiceProvidersState extends State<ServiceProviders> {
         });
   }
 }
+
+
+
 
 class MyFilter extends StatefulWidget {
   @override

@@ -196,7 +196,7 @@ class _HomeExploreState extends State<HomeExplore> {
                         child: GridView.builder(
                          itemCount: services.length,
                          itemBuilder: (context, index) {
-                           var path = services[index].image;
+                            var path = services[index].image;
                             var imageurl = path.replaceAll('\\', '/').toString();
                             print('image url ${imageurl}');
                             
@@ -205,8 +205,7 @@ class _HomeExploreState extends State<HomeExplore> {
                                  setState(() {
                                    currentSelected = index;
                                  });
-                                 Get.toNamed('/serviceproviders', arguments: services[index]);
-                                    // Get.to(ServiceProviders(), arguments: services[index]);
+                                     Get.to(ServiceProviders(), arguments: services[index]);
 
                                },
                                isSelected: currentSelected == index ? true : false,

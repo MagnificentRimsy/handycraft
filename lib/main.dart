@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'UIScreen/introScreen.dart';
 import 'UIScreen/signUpScreen.dart';
+import 'UIScreen/viewService.dart';
+import 'UIScreen/workerRegister.dart';
 import 'bindings/databinding.dart';
 
 
@@ -46,6 +48,9 @@ class MyApp extends StatelessWidget {
                   GetPage(name: '/dashboard', page: () =>   HomeExplore(), binding: DataBinding(),  transition: Transition.leftToRightWithFade ),
 
                   GetPage(name: '/serviceproviders', page: () => ServiceProviders(), binding: DataBinding()),
+                  GetPage(name: '/servicedetails', page: () => ViewService(), binding: DataBinding()),
+                GetPage(name: '/workerRegister', page: () => WorkerRegister(), binding: DataBinding()),
+
 
             
           ],

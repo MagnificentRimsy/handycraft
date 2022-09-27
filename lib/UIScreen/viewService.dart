@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:handycraft/UIScreen/BookingViewEdit.dart';
 import 'package:handycraft/UIScreen/booking.success.dart';
 import 'package:handycraft/common_widgets/CustomBottomAppBar.dart';
@@ -6,6 +7,8 @@ import 'package:handycraft/common_widgets/bankDetailsTextField.dart';
 import 'package:handycraft/common_widgets/circularImage.dart';
 import 'package:handycraft/common_widgets/custom_appbar.dart';
 import 'package:handycraft/contacts/constants.dart';
+import 'package:handycraft/models/provider.dart';
+import 'package:handycraft/models/service_category_provider.dart';
 import 'package:handycraft/styles/color.dart';
 import 'package:handycraft/styles/size.dart';
 import 'package:handycraft/styles/styles.dart';
@@ -54,6 +57,13 @@ class _ViewServiceState extends State<ViewService> {
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet";
   bool descTextShowFlag = false;
 
+  // ServiceCategoryProvider data = Get.arguments;
+    void initState() {
+    super.initState();
+
+    // print('Collected Data ${data.providers}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +72,11 @@ class _ViewServiceState extends State<ViewService> {
       ),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+                  // int i;
+                  //  var path = data.providers[i].image;
+                  //   var imageurl = path.replaceAll('\\', '/').toString();
+                  //   print('image url ${imageurl}');
+
           return <Widget>[
             SliverAppBar(
               toolbarHeight: 85,
@@ -83,13 +98,14 @@ class _ViewServiceState extends State<ViewService> {
                 titlePadding: EdgeInsets.only(left: 35, bottom: 15),
                 collapseMode: CollapseMode.pin,
                 title: Text(
-                  'Open (Closes at 10 pm)',
+                  'Verified',
                   style: TextStyle(fontSize: 14),
                 ),
                 background: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/images/sd.png'),
+                          image: 
+                          AssetImage('assets/capentar.jpg'),
                           fit: BoxFit.cover)),
                 ),
               ),
@@ -109,7 +125,7 @@ class _ViewServiceState extends State<ViewService> {
             padding: EdgeInsets.all(10),
             child: ListTile(
               title: Text(
-                'Fantasia Place',
+               'Name',
                 style: style.PoppinsSemiBold(fontSize: 20),
               ),
               subtitle: Text(

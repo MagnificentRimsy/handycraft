@@ -87,16 +87,16 @@ class SignUpScreen extends GetView<AuthController> {
                               color1: Color(0xFFE2E2E2),
                               hints: "Full Name",
                               validator: (value) {
-                            if (value.length == 0) {
-                              return "Name cannot be empty";
-                            }
-                            else {
-                              return null;
-                            }
-                          },
-                          onSaved: (value) {
-                            controller.nameController.text = value;
-                          },
+                                  if (value.length == 0) {
+                                    return "Name cannot be empty";
+                                  }
+                                  else {
+                                    return null;
+                                  }
+                                },
+                                onSaved: (value) {
+                                  controller.nameController.text = value;
+                                },
                             ),
                           ),
                           SpacebetweenTextField(),
@@ -131,7 +131,7 @@ class SignUpScreen extends GetView<AuthController> {
                               hints: "Phone",
                               validator: (value) {
                             if (value.length == 0) {
-                              return "Email cannot be empty";
+                              return "Phone cannot be empty";
                             }
                             if (!RegExp( "^(?:[+2]0)?[0-9]{10}")
                                 .hasMatch(value)) {

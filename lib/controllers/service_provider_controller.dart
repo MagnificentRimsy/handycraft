@@ -24,16 +24,12 @@ class ServiceProviderController extends GetxController with StateMixin<List<dyna
   }
 
    _getServiceCategoryProviders () async {
-     ServiceProvider().getServiceCategoryProviders('all-services-providers' ).then((value) {
-      print('service provider ${value}');
-      change(value, status: RxStatus.success());
-    },onError: (error){
-      change(null,status: RxStatus.error(error.toString()));
-    });
-}
-
-
-
-
+          ServiceProvider().getServiceCategoryProviders('all-services-providers' ).then((value) {
+            print('service provider ${value}');
+            change(value, status: RxStatus.success());
+          },onError: (error){
+            change(null,status: RxStatus.error(error.toString()));
+        });
+    }
   }
 
